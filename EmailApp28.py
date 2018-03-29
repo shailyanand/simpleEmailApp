@@ -57,22 +57,22 @@ message = StringVar()
 attachment = StringVar()
 filename1 = StringVar()
 
-Label(frame,text="SENDER",fg= "green").grid(column = 0,row =1)
+Label(frame,text="SENDER`s Email",fg= "green").grid(column = 0,row =1)
 Label(frame,text="PASSWORD",fg= "green").grid(column = 0,row =2)
-Label(frame,text="RECIEVER",fg= "green").grid(column = 0,row =3)
+Label(frame,text="RECIEVER`s Email",fg= "green").grid(column = 0,row =3)
 Label(frame,text="SUBJECT",fg= "green").grid(column =0,row =4)
 Label(frame,text="MESSAGE",fg= "green").grid(column = 0,row =5)
 Label(frame,textvariable = i,fg= "green",bg="orange").grid(column = 2,row =8)
-Label(frame,text="ATTACHMENTS",fg= "green").grid(column = 0,row =9)
-Label(frame,text="FILENAME",fg= "green").grid(column = 0,row =10)
+Label(frame,text="FILENAME",fg= "green").grid(column = 0,row =9)
+Label(frame,text="ATTACHMENTS",fg= "green").grid(column = 0,row =10)
 
 Entry(frame,textvariable = sender,fg= "red").grid(column=2,row=1)#sender
 Entry(frame,textvariable = password,fg= "red",show="*").grid(column=2,row=2)#password
 Entry(frame,textvariable = receiver,fg= "red").grid(column=2,row=3)#reciever
 Entry(frame,textvariable = subject,fg= "red").grid(column=2,row=4)#subject
 Entry(frame,textvariable = message,fg= "red").grid(column=1,row=6)#message
-Entry(frame,textvariable = attachment,fg= "red").grid(column=2,row=9)#attachments
-Entry(frame,textvariable = filename1,fg= "red").grid(column=2,row=10)
+Entry(frame,textvariable = attachment,fg= "red").grid(column=2,row=10)#attachments
+Entry(frame,textvariable = filename1,fg= "red").grid(column=2,row=9)
 
 Button(frame,text = "Send",command = emailsend).grid(column=2,row=7)
 
