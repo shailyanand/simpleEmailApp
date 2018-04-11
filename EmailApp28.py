@@ -40,15 +40,17 @@ def emailsend(*args):
 	        msg.attach(part)
 	except:
 	        pass
-	
-	username = a
-	obj = smtplib.SMTP('smtp.gmail.com',587)
-	obj.starttls()
-	obj.login(username,p)
-	obj.sendmail(a,b,msg.as_string())
-	obj.quit()
+	try:
+		username = a
+		obj = smtplib.SMTP('smtp.gmail.com',587)
+		obj.starttls()
+		obj.login(username,p)
+		obj.sendmail(a,b,msg.as_string())
+		obj.quit()
 
-	i.set("Email sent successfully")
+		i.set("Email sent successfully")
+	except:
+		i.set("Mail Not send!!")
     
     
 
