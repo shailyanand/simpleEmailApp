@@ -28,13 +28,17 @@ def emailsend(*args):
 	body= message.get()
     #    txt = MIMEText(body,'plain')
 	msg.attach(MIMEText(body,'plain'))
-	attachments = open(c,'rb')
-	part = MIMEBase('application','octet-stream')
-	part.set_payload((attachments).read())
-	encoders.encode_base64(part)
-	part.add_header('Content-Disposition',"attachment;filename=%s" %d)
-	msg.attach(part)
 
+
+	try:
+	        attachments = open(c,'rb')
+	        part = MIMEBase('application','octet-stream')
+	        part.set_payload((attachments).read())
+	        encoders.encode_base64(part)
+	        part.add_header('Content-Disposition',"attachment;filename=%s" %d)
+	        msg.attach(part)
+	except:
+	        pass
 	
 	username = a
 	obj = smtplib.SMTP('smtp.gmail.com',587)
@@ -44,7 +48,6 @@ def emailsend(*args):
 	obj.quit()
 
 	i.set("Email sent successfully")
-   
     
     
 
