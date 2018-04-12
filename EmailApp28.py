@@ -65,25 +65,29 @@ filename1 = StringVar()
 
 
 
-font1 = font.Font(family="Times", size=10)
-Label(frame,text="SENDER`s Email",fg= "green",font=font1).grid(column = 0,row =1)
-Label(frame,text="PASSWORD",fg= "green",font=font1).grid(column = 0,row =2)
-Label(frame,text="RECIEVER`s Email",fg= "green",font=font1).grid(column = 0,row =3)
-Label(frame,text="SUBJECT",fg= "green",font=font1).grid(column =0,row =4)
-Label(frame,text="MESSAGE",fg= "green",font=font1).grid(column = 0,row =5)
-Label(frame,textvariable = i,fg= "green",bg="orange",font=font1).grid(column = 2,row =8)
-Label(frame,text="FILENAME",fg= "green",font=font1).grid(column = 0,row =9)
-Label(frame,text="ATTACHMENTS",fg= "green",font=font1).grid(column = 0,row =10)
 
-Entry(frame,textvariable = sender,fg= "red").grid(column=2,row=1)#sender
-Entry(frame,textvariable = password,fg= "red",show="*").grid(column=2,row=2)#password
-Entry(frame,textvariable = receiver,fg= "red").grid(column=2,row=3)#reciever
-Entry(frame,textvariable = subject,fg= "red").grid(column=2,row=4)#subject
-Entry(frame,textvariable = message,fg= "red").grid(column=1,row=6)#message
-Entry(frame,textvariable = attachment,fg= "red").grid(column=2,row=10)#attachments
-Entry(frame,textvariable = filename1,fg= "red").grid(column=2,row=9)
+font_label = font.Font(family="Fixedsys", size=16)
+Label(frame,text="SENDER`s Email",fg= "green",font=font_label).grid(column = 0,row =1)
+Label(frame,text="PASSWORD",fg= "green",font=font_label).grid(column = 0,row =5)
+Label(frame,text="RECIEVER`s Email",fg= "green",font=font_label).grid(column = 0,row =7)
+Label(frame,text="SUBJECT",fg= "green",font=font_label).grid(column =0,row =9)
+Label(frame,text="MESSAGE",fg= "green",font=font_label).grid(column = 0,row =11)
+Label(frame,textvariable = i,fg= "green",bg="orange",font=font_label).grid(column = 6,row =19)
+Label(frame,text="FILENAME",fg= "green",font=font_label).grid(column = 0,row =13)
+Label(frame,text="ATTACHMENTS",fg= "green",font=font_label).grid(column = 0,row =15)
 
-Button(frame,text = "Send",command = emailsend).grid(column=2,row=7)
+
+font_entry = font.Font(family="Arial", size=16)
+Entry(frame,textvariable = sender,fg= "red",font=font_entry).grid(column=6,row=1)#sender
+Entry(frame,textvariable = password,fg= "red",show="*",font=font_entry).grid(column=6,row=5)#password
+Entry(frame,textvariable = receiver,fg= "red",font=font_entry).grid(column=6,row=7)#reciever
+Entry(frame,textvariable = subject,fg= "red",font=font_entry).grid(column=6,row=9)#subject
+Entry(frame,textvariable = message,fg= "red",font=font_entry).grid(column=6,row=11)#message
+Entry(frame,textvariable = attachment,fg= "red",font=font_entry).grid(column=6,row=15)#attachments
+Entry(frame,textvariable = filename1,fg= "red",font=font_entry).grid(column=6,row=13)
+
+
+Button(frame,text = "Send",command = emailsend,font=font_entry).grid(column=6,row=17)
 
 
 
